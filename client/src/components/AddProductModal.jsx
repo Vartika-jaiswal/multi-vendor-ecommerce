@@ -40,7 +40,7 @@ const AddProductModal = ({
         image: null,
       });
 
-      setPreview(`${BASE_URL}${editProduct.image}`);
+      setPreview(`${BASE_URL}/${editProduct.image}`);
 
     } else {
       setFormData({

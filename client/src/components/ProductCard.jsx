@@ -15,7 +15,7 @@ const ProductCard = ({
 
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100">
       <img
-        src={`${BASE_URL}${product.image}`}
+        src={`${BASE_URL}/${product.image}`}
         alt={product.title}
         className="w-full h-48 object-cover"
       />
