@@ -17,7 +17,7 @@ const ProductCard = ({
       {/* IMAGE */}
 
       <img
-        src={`http://localhost:8000/${product.image}`}
+        src={`https://multi-vendor-backend-h589.onrender.com/${product.image}`}
 
         alt={product.title}
 

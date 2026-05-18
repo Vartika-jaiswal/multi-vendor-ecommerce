@@ -38,7 +38,7 @@ const AddProductModal = ({
         image: null,
       });
 
-      setPreview( `http://localhost:8000/${editProduct.image}` );
+      setPreview( `https://multi-vendor-backend-h589.onrender.com/${editProduct.image}` );
 
     } else {
       setFormData({

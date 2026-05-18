@@ -1,13 +1,10 @@
-import axios from "axios";
-
-const API = "http://localhost:8000/api/vendors";
-
+import api from "./api";
 
 export const getVendors = async (
     page = 1,
     search = ""
   ) => {
-    const { data } = await axios.get(API, {
+    const { data } = await api.get("/vendors", {
         params: {
           page,
           limit: 5,
@@ -19,7 +16,7 @@ export const getVendors = async (
   };
 
 export const createVendor = async (vendorData) => {
-    const { data } = await axios.post( API, vendorData,
+    const { data } = await api.post( "/vendors", vendorData,
         {
           withCredentials: true,
         }
@@ -29,7 +26,7 @@ export const createVendor = async (vendorData) => {
   };
 
 export const updateVendor = async (id, vendorData) => {
-    const { data } = await axios.put(`${API}/${id}`, vendorData,
+    const { data } = await api.put(`/vendors/${id}`, vendorData,
         {
           withCredentials: true,
         }
@@ -39,7 +36,7 @@ export const updateVendor = async (id, vendorData) => {
   };
 
 export const toggleVendor = async (id) => {
-    const { data } = await axios.put(`${API}/toggle/${id}`,
+    const { data } = await api.put(`/vendors/toggle/${id}`,
         {},
         {
           withCredentials: true,

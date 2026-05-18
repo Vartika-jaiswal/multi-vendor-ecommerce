@@ -1,5 +1,4 @@
-import axios from "axios";
-const API = "http://localhost:8000/api/products";
+import api from "./api";
 
 export const getProducts = async (
   page = 1,
@@ -7,7 +6,7 @@ export const getProducts = async (
   category = "",
   sort = "latest"
 ) => {
-  const { data } = await axios.get(API, {
+  const { data } = await api.get("/products", {
       params: {
         page,
         search,
@@ -21,8 +20,8 @@ export const getProducts = async (
 
 
 export const createProduct = async (formData) => {
-    const { data } = await axios.post(
-        API,
+    const { data } = await api.post(
+        "/products",
         formData,
         {
           headers: {
@@ -38,8 +37,8 @@ export const createProduct = async (formData) => {
 
 
 export const updateProduct = async (id, formData) => {
-    const { data } = await axios.put(
-        `${API}/${id}`,
+    const { data } = await api.put(
+        `/products/${id}`,
         formData,
         {
           headers: {
@@ -54,8 +53,8 @@ export const updateProduct = async (id, formData) => {
   };
 
 export const deleteProduct =async (id) => {
-    const { data } = await axios.delete(
-        `${API}/${id}`,
+    const { data } = await api.delete(
+        `/products/${id}`,
         {
           withCredentials: true,
         }

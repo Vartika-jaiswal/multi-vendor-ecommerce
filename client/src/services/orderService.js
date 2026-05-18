@@ -1,7 +1,4 @@
-import axios from "axios";
-
-const API =
-  "http://localhost:8000/api/orders";
+import api from "./api";
 
 
 // GET ORDERS
@@ -12,10 +9,10 @@ export const getOrders = async (
 ) => {
 
   const { data } =
-    await axios.get(API, {
+    await api.get("/orders", {
       params: {
         page,
-        search,
+        search, 
         status,
       },
 
@@ -31,8 +28,8 @@ export const createOrder =
   async (orderData) => {
 
     const { data } =
-      await axios.post(
-        API,
+      await api.post(
+        "/orders",
         orderData,
         {
           withCredentials: true,
@@ -48,8 +45,8 @@ export const updateOrderStatus =
   async (id, status) => {
 
     const { data } =
-      await axios.put(
-        `${API}/${id}`,
+      await api.put(
+        `/orders/${id}`,
         { status },
         {
           withCredentials: true,
