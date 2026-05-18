@@ -67,6 +67,15 @@ PORT=8000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 ```
+
+## Live Demo
+
+Frontend:
+https://multi-vendor-ecommerce-beryl.vercel.app
+
+Backend:
+https://multi-vendor-backend-h589.onrender.com
+
 ---
 
 # Tech Stack
