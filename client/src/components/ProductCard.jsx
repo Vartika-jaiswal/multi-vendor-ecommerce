@@ -3,6 +3,7 @@ import {
   FaTrash,
 } from "react-icons/fa";
 
+const BASE_URL = import.meta.env.VITE_API_URL.replace("/api", "");
 
 const ProductCard = ({
   product,
@@ -13,54 +14,30 @@ const ProductCard = ({
   return (
 
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100">
-
-      {/* IMAGE */}
-
       <img
-        src={`https://multi-vendor-backend-h589.onrender.com/${product.image}`}
-
+        src={`${BASE_URL}${product.image}`}
         alt={product.title}
-
         className="w-full h-48 object-cover"
       />
-
-
       <div className="p-4">
 
-        {/* TOP */}
-
         <div className="flex items-start justify-between gap-3">
-
           <div>
-
             <h2 className="text-lg font-bold text-gray-800 line-clamp-1">
               {product.title}
             </h2>
-
             <p className="text-gray-500 text-xs mt-1">
               {product.category}
             </p>
-
           </div>
-
-
           <div className="bg-[#F3F4FF] text-[#6D5DF6] px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap">
-
             {product.stock} Left
-
           </div>
-
         </div>
-
-
-        {/* DESCRIPTION */}
 
         <p className="text-gray-500 mt-3 text-sm line-clamp-2 min-h-[40px]">
           {product.description}
         </p>
-
-
-        {/* BOTTOM */}
 
         <div className="flex items-end justify-between mt-4">
 
@@ -79,9 +56,6 @@ const ProductCard = ({
             )}
 
           </div>
-
-
-          {/* ACTIONS */}
 
           <div className="flex gap-2">
 

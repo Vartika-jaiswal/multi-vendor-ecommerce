@@ -3,6 +3,8 @@ import Modal from "react-modal";
 import { createProduct, updateProduct } from "../services/productService";
 import { toast } from "react-toastify";
 
+const BASE_URL = import.meta.env.VITE_API_URL.replace("/api", "");
+
 Modal.setAppElement("#root");
 
 const AddProductModal = ({
@@ -38,7 +40,7 @@ const AddProductModal = ({
         image: null,
       });
 
-      setPreview( `https://multi-vendor-backend-h589.onrender.com/${editProduct.image}` );
+      setPreview(`${BASE_URL}${editProduct.image}`);
 
     } else {
       setFormData({
